@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/view_as_list"
+        android:title="@string/view_as_list"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_format_list_numbered_black_24dp"
+        />
+    <!--<item android:id="@+id/help"-->
+        <!--android:title="menu2" />-->
+</menu>

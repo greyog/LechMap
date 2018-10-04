@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stones>
+    <stone name="01">
+        <image name="stone01.jpg">
+            <route
+                name="1 A"
+                color="FF6400" />
+            <route
+                name="1 B"
+                color="00EEA3" />
+        </image>
+    </stone>
+    <stone name="03">
+        <image name="stone03.jpg">
+            <route
+                name="3 A"
+                color="FF6400" />
+            <route
+                name="3 B"
+                color="00EEA3" />
+        </image>
+    </stone>
+    <stone name="02">
+        <image name="stone02.jpg">
+            <route
+                name="2 A"
+                color="FF6400" />
+        </image>
+    </stone>
+    <stone name="04">
+        <image name="stone04.jpg">
+            <route
+                name="4 A"
+                color="FF6400" />
+        </image>
+    </stone>
+    <stone name="05">
+        <image name="stone05.jpg">
+            <route
+                name="5 A"
+                color="FF6400" />
+        </image>
+    </stone>
+    <stone name="06">
+        <image name="stone06.jpg">
+            <route
+                name="6 A"
+                color="FF6400" />
+        </image>
+    </stone>
+    <stone name="07">
+        <image name="stone07.jpg">
+            <route
+                name="7 A"
+                color="FF6400" />
+        </image>
+    </stone>
+    <stone name="08">
+        <image name="stone08_00.jpg">
+            <route
+                name="8 A"
+                color="FF6400" />
+        </image>
+        <image name="stone08_01.jpg">
+            <route
+                name="8 B"
+                color="FF6400" />
+        </image>
+        <image name="stone08_02.jpg">
+            <route
+                name="8 C"
+                color="FF6400" />
+        </image>
+    </stone>
+
+    <stone name="09">
+        <image name="stone09.jpg">
+            <route
+                name="9 A"
+                color="FF6400" />
+        </image>
+    </stone>
+    <stone name="10">
+        <image name="stone10.jpg">
+            <route
+                name="10 A"
+                color="FF6400" />
+        </image>
+    </stone>
+    <stone name="11">
+        <image name="stone11.jpg">
+            <route
+                name="11 B"
+                color="FF6400" />
+            <route
+                name="11 A"
+                color="00EEA3" />
+        </image>
+    </stone>
+    <stone name="12">
+        <image name="stone12.jpg">
+            <route
+                name="12 A"
+                color="FF6400" />
+            <route
+                name="12 B"
+                color="00F63A" />
+            <route
+                name="12 C"
+                color="F80070" />
+        </image>
+    </stone>
+    <stone name="13">
+        <image name="stone13_00.jpg">
+            <route
+                name="13 A"
+                color="FF6400" />
+        </image>
+        <image name="stone13_01.jpg">
+            <route
+                name="13 B"
+                color="00F63A" />
+            <route
+                name="13 C"
+                color="F80070" />
+        </image>
+    </stone>
+    <stone name="14">
+        <image name="stone14.jpg">
+            <route
+                name="14 A"
+                color="FF6400" />
+        </image>
+    </stone>
+    <stone name="15">
+        <image name="stone15.jpg">
+            <route
+                name="15 A"
+                color="FF6400" />
+        </image>
+    </stone>
+    <stone name="16">
+        <image name="stone16.jpg">
+            <route
+                name="16 A"
+                color="FF6400" />
+            <route
+                name="16 B"
+                color="00F92B" />
+        </image>
+    </stone>
+    <stone name="17">
+        <image name="stone17.jpg">
+            <route
+                name="17 A"
+                color="FF6400" />
+        </image>
+    </stone>
+    <stone name="18">
+        <image name="stone18.jpg">
+            <route
+                name="18 A"
+                color="FF6400" />
+        </image>
+    </stone>
+    <stone name="19">
+        <image name="stone19_00.jpg">
+            <route
+                name="19 B"
+                color="FF6400" />
+        </image>
+        <image name="stone19_01.jpg">
+            <route
+                name="19 C"
+                color="FF6400" />
+        </image>
+        <image name="stone19_02.jpg">
+            <route
+                name="19 A"
+                color="FF6400" />
+        </image>
+    </stone>
+    <stone name="20">
+        <image name="stone20.jpg">
+            <route
+                name="20 A"
+                color="FF6400" />
+            <route
+                name="20 B"
+                color="00F545" />
+            <route
+                name="20 C"
+                color="FF0073" />
+        </image>
+    </stone>
+    <stone name="21">
+        <image name="stone21.jpg">
+            <route
+                name="21 A"
+                color="FF6400" />
+        </image>
+    </stone>
+    <stone name="22">
+        <image name="stone22_00.jpg">
+            <route
+                name="22 B"
+                color="FF0071" />
+            <route
+                name="22 C"
+                color="F96801" />
+        </image>
+        <image name="stone22_01.jpg">
+            <route
+                name="22 A"
+                color="E85F00" />
+        </image>
+    </stone>
+    <stone name="23">
+        <image name="stone23.jpg">
+            <route
+                name="23 A"
+                color="FF6600" />
+        </image>
+    </stone>
+    <stone name="24">
+        <image name="stone24.jpg">
+            <route
+                name="24 A"
+                color="FF6600" />
+            <route
+                name="24 B"
+                color="00ED8A" />
+            <route
+                name="24 C"
+                color="F900B5" />
+        </image>
+    </stone>
+    <stone name="25">
+        <image name="stone25.jpg">
+            <route
+                name="25 A"
+                color="FF6600" />
+            <route
+                name="25 B"
+                color="00F459" />
+        </image>
+    </stone>
+    <stone name="26">
+        <image name="stone26.jpg">
+            <route
+                name="26 A"
+                color="FF6600" />
+        </image>
+    </stone>
+    <stone name="28">
+        <image name="stone28.jpg">
+            <route
+                name="28 A"
+                color="FF6600" />
+        </image>
+    </stone>
+    <stone name="27">
+        <image name="stone27.jpg">
+            <route
+                name="27 A"
+                color="FF6600" />
+            <route
+                name="27 B"
+                color="7FE200" />
+        </image>
+    </stone>
+    <stone name="30">
+        <image name="stone30.jpg">
+            <route
+                name="30 A"
+                color="FF6600" />
+            <route
+                name="30 B"
+                color="F900E7" />
+            <route
+                name="30 C"
+                color="00F163" />
+        </image>
+    </stone>
+    <stone name="29">
+        <image name="stone29_00.jpg">
+            <route
+                name="29 B"
+                color="FF6600" />
+        </image>
+        <image name="stone29_01.jpg">
+            <route
+                name="29 C"
+                color="FF6600" />
+        </image>
+        <image name="stone29_02.jpg">
+            <route
+                name="29 D"
+                color="FF6600" />
+        </image>
+        <image name="stone29_03.jpg">
+            <route
+                name="29 A"
+                color="FF6600" />
+        </image>
+    </stone>
+    <stone name="31">
+        <image name="stone31.jpg">
+            <route
+                name="31 A"
+                color="FF6600" />
+        </image>
+    </stone>
+    <stone name="32">
+        <image name="stone32_00.jpg">
+            <route
+                name="32 B"
+                color="FF6600" />
+        </image>
+        <image name="stone32_01.jpg">
+            <route
+                name="32 C"
+                color="FF6600" />
+        </image>
+        <image name="stone32_02.jpg">
+            <route
+                name="32 D"
+                color="FF6600" />
+        </image>
+    </stone>
+    <stone name="33">
+        <image name="stone33.jpg">
+            <route
+                name="33 A"
+                color="FF6600" />
+        </image>
+    </stone>
+
+
+</stones>
