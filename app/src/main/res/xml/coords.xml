@@ -143,7 +143,7 @@
 		</Point>
 	</Placemark>
 	<Placemark>
-		<name>32</name>
+		<name>33</name>
 		<Point>
 			<altitudeMode>clampToGround</altitudeMode>
 			<coordinates>43.330587,43.529954,1155.746338</coordinates>
@@ -157,7 +157,7 @@
 		</Point>
 	</Placemark>
 	<Placemark>
-		<name>33</name>
+		<name>32</name>
 		<Point>
 			<altitudeMode>clampToGround</altitudeMode>
 			<coordinates>43.330253,43.53043,1159.563721</coordinates>

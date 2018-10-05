@@ -1,8 +1,7 @@
 package com.greyogproducts.greyog.lechmap
 
 import android.app.Activity
-import android.content.Intent
-import android.content.IntentSender
+import android.content.*
 import android.content.pm.PackageManager
 import android.graphics.*
 import android.location.Location
@@ -10,7 +9,6 @@ import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
-import android.view.MenuItem
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -36,16 +34,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback{
 
     private lateinit var fusedLoacationClient: FusedLocationProviderClient
 
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        val inflater = menuInflater
-//        inflater.inflate(R.menu.map_menu, menu)
-//        val viewAsListMI = menu?.findItem(R.id.view_as_list)
-//        viewAsListMI?.setOnMenuItemClickListener {
-//            launchListActivity()
-//            return@setOnMenuItemClickListener false
-//        }
-//        return true
-//    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.map_menu, menu)
+        val viewAsListMI = menu?.findItem(R.id.view_as_list)
+        viewAsListMI?.setOnMenuItemClickListener {
+            launchListActivity()
+            return@setOnMenuItemClickListener false
+        }
+        return true
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,8 +52,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback{
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-
-
 
         fusedLoacationClient = LocationServices.getFusedLocationProviderClient(this)
 
@@ -67,6 +63,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback{
             }
         }
         createLocationRequest()
+
+    }
+
+    private class Receiver(val map: GoogleMap, val markers: MutableList<Marker>) : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            val name = intent?.extras?.getString("name")
+            val marker = markers.find { it.title == name }
+            marker?.showInfoWindow()
+            map.animateCamera(CameraUpdateFactory.newLatLng(marker?.position))
+        }
 
     }
 
@@ -86,6 +92,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback{
         mMap.setOnInfoWindowClickListener {
             launchStoneActivity(it)
         }
+        val filter = IntentFilter("com.greyogproducts.greyog.lechmap.SET_MAP_FOCUS")
+        registerReceiver(Receiver(mMap, markerList), filter)
+
 //        mMap.setOnMarkerClickListener {
 //            if (it.isInfoWindowShown) {
 //                launchStoneActivity(it)
@@ -127,8 +136,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback{
     }
 
     private fun launchListActivity() {
-//        supportFragmentManager.beginTransaction().replace(R.id.map,ItemFragment.newInstance(2)).commit()
+        val intent = Intent(this, ListActivity::class.java)
+//        intent.putExtra("stoneNumber", it.title)
+        this.startActivity(intent)
+
     }
+
+    private val markerList = emptyList<Marker>().toMutableList()
 
     private fun loadMarkers() {
         val hm = HashMap<String, String>()
@@ -149,8 +163,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback{
             val lat = temp?.get(1)?.toDouble()
             if (lat != null && lon != null) {
                 val ll = LatLng(lat, lon)
-                addStoneMarker(ll, it)
-//                mMap.addMarker(MarkerOptions().position(ll).title(it))
+//                addStoneMarker(ll, it)
+                val marker = mMap.addMarker(MarkerOptions().position(ll).title(it))
+                markerList.add(marker)
             }
 
         }

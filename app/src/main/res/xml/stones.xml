@@ -311,27 +311,27 @@
                 color="FF6600" />
         </image>
     </stone>
-    <stone name="32">
+    <stone name="33">
         <image name="stone32_00.jpg">
             <route
-                name="32 B"
+                name="33 A"
                 color="FF6600" />
         </image>
         <image name="stone32_01.jpg">
             <route
-                name="32 C"
+                name="33 B"
                 color="FF6600" />
         </image>
         <image name="stone32_02.jpg">
             <route
-                name="32 D"
+                name="33 C"
                 color="FF6600" />
         </image>
     </stone>
-    <stone name="33">
+    <stone name="32">
         <image name="stone33.jpg">
             <route
-                name="33 A"
+                name="32 A"
                 color="FF6600" />
         </image>
     </stone>
