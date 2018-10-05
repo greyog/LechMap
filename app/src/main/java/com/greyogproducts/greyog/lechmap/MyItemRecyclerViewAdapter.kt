@@ -1,9 +1,11 @@
 package com.greyogproducts.greyog.lechmap
 
+import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 
 
@@ -17,19 +19,26 @@ import kotlinx.android.synthetic.main.fragment_item.view.*
  * specified [OnListFragmentInteractionListener].
  * TODO: Replace the implementation with code for your data type.
  */
-class MyItemRecyclerViewAdapter(
+class MyItemRecyclerViewAdapter(val context: Context,
         private val mValues: List<StoneItem>,
         private val mListener: OnListFragmentInteractionListener?)
     : RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder>() {
 
     private val mOnClickListener: View.OnClickListener
+    private val mOnMapImgClickListener: View.OnClickListener?
 
     init {
         mOnClickListener = View.OnClickListener { v ->
             val item = v.tag as StoneItem
             // Notify the active callbacks interface (the activity, if the fragment is attached to
             // one) that an item has been selected.
-            mListener?.onListFragmentInteraction(item)
+            mListener?.onListFragmentInteraction(item, false)
+        }
+        mOnMapImgClickListener = View.OnClickListener { v ->
+            val item = v.tag as StoneItem
+            // Notify the active callbacks interface (the activity, if the fragment is attached to
+            // one) that an item has been selected.
+            mListener?.onListFragmentInteraction(item, true)
         }
     }
 
@@ -41,12 +50,16 @@ class MyItemRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = mValues[position]
-        holder.mIdView.text = item.name
-        holder.mContentView.text = item.coords
+        holder.mIdView.text = context.getString(R.string.stone_number) + item.name
+        holder.mContentView.text = ""
 
         with(holder.mView) {
             tag = item
             setOnClickListener(mOnClickListener)
+        }
+        with(holder.mSetFocus) {
+            tag = item
+            setOnClickListener(mOnMapImgClickListener)
         }
     }
 
@@ -55,6 +68,7 @@ class MyItemRecyclerViewAdapter(
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         val mIdView: TextView = mView.item_number
         val mContentView: TextView = mView.content
+        val mSetFocus: ImageView = mView.set_focus
 
         override fun toString(): String {
             return super.toString() + " '" + mContentView.text + "'"

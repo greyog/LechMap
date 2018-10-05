@@ -16,7 +16,7 @@ object StoneListContent {
     /**
      * An array of sample (dummy) mItems.
      */
-    private val mItems: MutableList<StoneItem> = ArrayList()
+    private var mItems: MutableList<StoneItem>? = null
 
     /**
      * A map of sample (dummy) mItems, by ID.
@@ -27,6 +27,10 @@ object StoneListContent {
 
     fun getItems(context: Context): MutableList<StoneItem> {
         //        fill stones names, coordinates
+        if (mItems != null) {
+            return mItems as MutableList<StoneItem>
+        }
+        mItems = ArrayList()
         var curName = ""
         val parser1 = context.resources.getXml(R.xml.coords)
         while (parser1.eventType != XmlPullParser.END_DOCUMENT) {
@@ -73,12 +77,15 @@ object StoneListContent {
 
         }
         println(mItems)
+        mItems?.sortBy {
+            it.name.toIntOrNull()
+        }
 
-        return mItems
+        return mItems as ArrayList<StoneItem>
     }
 
     private fun addItem(item: StoneItem) {
-        mItems.add(item)
+        mItems?.add(item)
         itemMap[item.name] = item
     }
 

@@ -44,7 +44,7 @@ class ItemFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = MyItemRecyclerViewAdapter(StoneListContent.getItems(context), listener)
+                adapter = MyItemRecyclerViewAdapter(context, StoneListContent.getItems(context), listener )
             }
         }
         return view
@@ -77,7 +77,7 @@ class ItemFragment : Fragment() {
      */
     interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        fun onListFragmentInteraction(item: StoneItem?)
+        fun onListFragmentInteraction(item: StoneItem?, viewOnMap:Boolean)
     }
 
     companion object {

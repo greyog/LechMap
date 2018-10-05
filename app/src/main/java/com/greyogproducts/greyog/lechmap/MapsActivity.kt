@@ -71,7 +71,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback{
             val name = intent?.extras?.getString("name")
             val marker = markers.find { it.title == name }
             marker?.showInfoWindow()
-            map.animateCamera(CameraUpdateFactory.newLatLng(marker?.position))
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(marker?.position, 18f))
         }
 
     }
